@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+
+    
+</head>
+<body>
+    {% if current_user.is_authenticated %}
+        <nav class='nav'>
+
+            <div class="nav-container">
+
+                <a class="navbar-brand" href="#">
+                    <img src="https://i.pinimg.com/736x/73/ab/4c/73ab4c10215d77a8cd4ec42985a686b0.jpg" alt="Logo" width="50"> 
+                    <h1>Hirely</h1>
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+               
+                    
+
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('jobs.adminjobs') }}">Jobs</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('admin.admin_applications') }}">Applications</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('auth.users') }}">Users</a>
+                        </li>
+
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
+                        </li>
+                    <ul>
+                    
+                        <form action="{{ url_for('jobs.search') }}" method="GET" class="search-form">
+                            <input type="text" name="title" class="form-control" placeholder="Job Title" aria-label="Job Title">
+                            <input type="text" name="location" class="form-control" placeholder="Location" aria-label="Location">
+                            <button type="submit" class="btn btn-outline-success">Search</button>
+                        </form>
+
+                
+                </div>
+            </div>
+
+            
+        </nav>
+
+        
+    {% endif %}
+    {% block content %}{% endblock %}
+</body>
+</html>

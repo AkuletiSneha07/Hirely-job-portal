@@ -1,0 +1,47 @@
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+   
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: #45a049;
+} */
+.apply-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue background */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+    width: 300px;
+    margin-left: 600px;
+    margin-bottom: 100px;
+
+}
+
+.apply-btn:hover {
+    background-color: #0056b3; /* Darker blue when hovered */
+}

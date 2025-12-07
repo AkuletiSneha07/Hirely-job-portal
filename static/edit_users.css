@@ -1,0 +1,62 @@
+/* Centering the form */
+.form-container {
+    width: 40%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Styling the heading */
+.heading {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Styling form elements */
+label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+input {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Button styling */
+.update-btn {
+    margin-top: 15px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.update-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Back to Users link */
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}

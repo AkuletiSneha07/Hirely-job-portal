@@ -1,0 +1,45 @@
+form {
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column; /* Stack label and input */
+    margin-bottom: 15px !important;
+    width: 100%; /* Ensure consistent width */
+}
+
+label {
+    font-weight: bold !important;
+    margin-bottom: 5px !important;
+}
+
+input, select, textarea {
+    width: 100% !important;
+    padding: 8px !important;
+    font-size: 16px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 5px !important;
+}
+
+textarea {
+    height: 100px !important;
+}
+
+button {
+    padding: 10px 20px !important;
+    font-size: 16px !important;
+    background-color: #4CAF50 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+}
+
+button:hover {
+    background-color: #45a049 !important;
+}

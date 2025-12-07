@@ -1,0 +1,19 @@
+{% extends 'admin.html' %}
+
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='edit_users.css') }}">
+
+    <h2 class="heading">Edit User</h2>
+    <div class="form-container">
+        <form method="POST">
+            <label>Username:</label>
+            <input type="text" name="username" value="{{ user.username }}" required>
+
+            <label>Email:</label>
+            <input type="email" name="email" value="{{ user.email }}" required>
+
+            <button type="submit" class="update-btn">Update</button>
+        </form>
+        <a href="{{ url_for('auth.users') }}" class="back-link">Back to Users</a>
+    </div>
+{% endblock %}

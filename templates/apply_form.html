@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Apply for  {{ job.title }}</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        
+        <input type="hidden" name="job_title" value="{{ job.title }}">
+
+        
+
+        <div class="form-group">
+            <label>Company Name</label>
+            <input name="job_company_name" value="{{ job.company_name }}" disabled>
+        </div>
+
+        
+        <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" name="first_name" id="first_name" placeholder="First Name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="middle_name">Middle Name</label>
+            <input type="text" name="middle_name" id="middle_name" placeholder="Middle Name">
+        </div>
+
+        <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name" id="last_name" placeholder="Last Name" required>
+        </div>
+
+        
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="emaill" placeholder="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="mobile_number">Mobile Number</label>
+            <input type="text" name="mobile_number" id="mobile_number" placeholder="mobile_number" required>
+        </div>
+
+        
+        <h3>Education Details</h3>
+        <div class="form-group">
+            <label for="highest_qualification">Highest Qualification</label>
+            <input type="text" name="highest_qualification" id="highest_qualification" placeholder="highest_qualification" required>
+        </div>
+
+        <div class="form-group">
+            <label for="college_name">College Name</label>
+            <input type="text" name="college_name" id="college_name" placeholder="College Name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="specialization">Specialization</label>
+            <input type="text" name="specialization" id="specialization" placeholder="Specialization" required>
+        </div>
+
+        <div class="form-group">
+            <label for="education_from_year">From Year</label>
+            <input type="text" name="education_from_year" id="education_from_year" placeholder="From Year" required>
+        </div>
+
+        <div class="form-group">
+            <label for="education_to_year">To Year</label>
+            <input type="text" name="education_to_year" id="education_to_year" placeholder="To Year" required>
+        </div>
+
+        <div class="form-group">
+            <label for="education_country">Country</label>
+            <input type="text" name="education_country" id="education_country" placeholder="Country" required>
+        </div>
+
+        
+        <h3>Current Job Details</h3>
+        <div class="form-group">
+            <label for="current_job_role">Current Job Role</label>
+            <input type="text" name="current_job_role" id="current_job_role" placeholder="Current Job Role" required>
+        </div>
+
+        <div class="form-group">
+            <label for="current_salary">Current Salary (per annum)</label>
+            <input type="number" name="current_salary" id="current_salary" placeholder="Current Salary" required>
+        </div>
+
+        <div class="form-group">
+            <label for="expected_salary">Expected Salary (per annum)</label>
+            <input type="number" name="expected_salary" id="expected_salary" placeholder="Expected Salary" required>
+        </div>
+
+        
+        <h3>Permanent Address</h3>
+        <div class="form-group">
+            <label for="permanent_address">Permanent Address</label>
+            <textarea name="permanent_address" id="permanent_address" placeholder="Permanent Address" required></textarea>
+        </div>
+
+        
+        <div class="form-group">
+            <label for="preferred_location1">Preferred Location 1</label>
+            <input type="text" name="preferred_location1" id="preferred_location1" placeholder="preferred_location1" required>
+            
+        </div>
+
+        <div class="form-group">
+            <label for="preferred_location2">Preferred Location 2</label>
+            <input type="text" name="preferred_location2" id="preferred_location2" placeholder="preferred_location2" required>
+        </div>
+
+        
+        <div class="form-group">
+            <label for="key_skills">Key Skills (comma-separated)</label>
+            <textarea name="key_skills" id="key_skills" placeholder="Key Skills (comma-separated)"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="resume">Upload Resume</label>
+            <input type="file" name="resume" id="resume" accept=".pdf,.doc,.docx" required>
+        </div>
+
+       
+        <button type="submit">Submit Application</button>
+    </form>
+</body>
+</html>

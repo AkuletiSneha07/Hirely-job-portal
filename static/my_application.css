@@ -1,0 +1,61 @@
+/* styles.css */
+
+/* Table Styling */
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Button Styling */
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Heading Styling */
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+/* Form Button Styling */
+button[type="submit"] {
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+/* Confirmation Styling for Hover */
+button[type="submit"]:hover {
+    background-color: #c82333;
+}

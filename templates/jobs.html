@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='job.css') }}">
+<div class="container d-flex flex-column align-items-center mt-4">
+    <h1 class="text-center mb-4">Job Postings</h1>
+
+    {% if current_user.role == "employer" %}
+    <div class="text-center mb-3">
+        <a href="{{ url_for('jobs.post_job') }}" class="btn btn-primary">Post a Job</a>
+    </div>
+    {% endif %}
+
+    <div class="row justify-content-center"> 
+        {% if jobs|length == 0 %}
+        
+        <div class="col-12 text-center">
+            <p>No matches found. Please try different search criteria.</p>
+        </div>
+        {% else %}
+        {% for job in jobs %}
+        <div class="col-md-6 mb-4 d-flex justify-content-center"> 
+            <div class="card job-card">
+                <img src="{{ job.image_url }}" class="card-img-top job-img" alt="Job Image">
+                <div class="card-body">
+                    <h5 class="card-title">{{ job.title }}</h5>
+                    <p class="card-text mt-2"><strong>company:</strong> {{ job.company_name }}</p>
+                    <p class="card-text mt-2"><strong>location:</strong> {{ job.location }}</p>
+                    <p class="card-text mt-2"><strong>Salary:</strong> {{ job.salary }}</p>
+                    <p class="card-text"><strong>Experience:</strong> {{ job.experience }}</p>
+                    <a href="{{ url_for('jobs.job_detail', job_id=job.id) }}" class="btn btn-success">View Job</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h5>Location</h5>
+            <ul>
+                <li>Bengaluru, Karnataka, India</li>
+                <li>Hyderabad, Telangana, India</li>
+                <li>Chennai, Tamil Nadu, India</li>
+                <li>Delhi, India</li>
+                <li>Tiruvananthapuram, Kerala, India</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h5>Contact Us</h5>
+            <ul>
+                <li>📞 Mobile: 9391050710</li>
+                <li>📧 Email: hirely34@gmail.com</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h5>Related Information</h5>
+            <p>Hirely is a trusted job portal connecting job seekers with top employers. We provide seamless job searching, application tracking, and career growth opportunities.</p>
+        </div>
+    </div>
+    <hr>
+    <p class="text-center">&copy; 2024 Hirely. All Rights Reserved.</p>
+</footer>
+
+{% endblock %}

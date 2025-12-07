@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Post a Job</h1>
+    <form method="post">
+        <input type="text" name="title" placeholder="Title">
+        <textarea name="description" placeholder="Description"></textarea>
+        <input type="text" name="company_name" placeholder="Company">
+        <input type="text" name="location" placeholder="Location">
+        <input type="text" name="salary" placeholder="Salary">
+        <button type="submit">Post</button>
+    </form>
+{% endblock %}

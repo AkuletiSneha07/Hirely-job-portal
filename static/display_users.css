@@ -1,0 +1,60 @@
+/* Centering the table */
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Styling the table */
+table {
+    width: 70%;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: #f8f9fa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+th {
+    background-color: #343a40;
+    color: white;
+}
+
+/* Styling Buttons */
+.edit-btn, .delete-btn {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.edit-btn {
+    background-color: #007bff;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.edit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Centering the Heading */
+.heading {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}

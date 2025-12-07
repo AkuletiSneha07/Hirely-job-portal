@@ -1,0 +1,207 @@
+
+
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+   
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+        <div class="nav-container">
+
+            <a class="navbar-brand" href="#">
+                <img src="https://i.pinimg.com/736x/73/ab/4c/73ab4c10215d77a8cd4ec42985a686b0.jpg" alt="Logo" width="50"> 
+                <h1>Hirely</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('auth.register') }}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('jobs.jobs') }}">Jobs</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    
+
+    <div class="login-container login-section">
+        <div class="row align-items-center">
+           
+            <div class="col-md-6">
+                <div class="login-form">
+                    
+                    {% if error %}
+            <p class="text-danger">{{ error }}</p>
+        {% endif %}
+        <form method="post" class="login-form">
+            <h1 class="text-center">Login</h1>
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" name="username" placeholder="Username" class="form-control mb-2">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" name="password" placeholder="Password" class="form-control mb-2">
+            <button type="submit" class="btn btn-primary">Login</button>
+        
+            <p>If you do not have an account,  <a href="{{ url_for('auth.register') }}" class="register-link">Register</a> here.
+            
+            </p>
+            
+        </form> 
+
+                </div>
+            </div>
+    
+            
+            <div class="col-md-6 text-center">
+                <h1 class="dream-job-text">Your Dream Job, </h1>
+                <h1 class="dream-job-text"> Just a Click Away!</h1>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhRGXmVQ4UiVPQNMHemaevfshzVUc5iteUHw1deuADk-02p__qG6rP9knLftsscYXwkJ0&usqp=CAU" alt="Career Image" class="img-fluid career-img">
+            </div>
+        </div>
+    </div>
+
+    <div class=" find-container content-section">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1>Find Your Team</h1>
+                <p>The right team can make all the difference in achieving success. Whether you're an employer searching for dedicated professionals or a job seeker looking for the perfect opportunity, our job portal is here to bridge the gap.
+    
+                We provide a simple, efficient, and hassle-free platform to connect employers with job seekers. Companies can post job openings and find the right talent, while candidates can explore opportunities that match their skills and aspirations.
+                
+                Start your journey today and build the team that drives success!</p>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="https://www.gstatic.com/hiring/CportalUi/locations_1x.jpg" alt="Hiring" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <div class="equal-container content-section">
+        <div class="row align-items-center">
+            
+            <div class="col-md-6 text-center">
+                <img src="https://s7ap1.scene7.com/is/image/TCSCOMprod/home-footer-careers-updated?wid=1000&hei=526&dpr=off" alt="Career Image" class="img-fluid career-img">
+            </div>
+            
+            
+            <div class="col-md-6">
+                <h1 class="text-primary">Equal Opportunity – Your Talent, Your Future!</h1>
+                <p> we believe that every dream deserves a chance and that talent should be the only factor that defines success. We are committed to breaking barriers, eliminating biases, and creating a level playing field where everyone—regardless of gender, background, or experience—has the opportunity to shine.</p>
+    
+                <ul class="features">
+                    <li>. <strong>Diversity Drives Innovation:</strong> We connect job seekers with companies that value inclusivity and fresh perspectives.</li>
+                    <li>. <strong>Your Skills Matter:</strong> No discrimination, no bias—just the right job based on your potential and passion.</li>
+                    <li>. <strong>A Future Without Limits:</strong> Whether you're starting fresh, making a career change, or aiming higher, your journey starts here!</li>
+                </ul>
+    
+                <p class="highlight">. Because talent is everywhere—opportunities should be too! Join us and take the next step toward success. </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonials-section">
+        <h2 class="text-center">Hear From Our Users – Real Stories, Real Success!</h2>
+        <p class="text-center">At Hirely, we take pride in helping job seekers and employers find the perfect match. But don’t just take our word for it—hear what our users have to say!</p>
+        
+        <div class="row">
+           
+            <div class="col-md-3">
+                <div class="testimonial-card">
+                    <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Rohan Mehta" class="testimonial-img">
+                    <h5> Rohan Mehta – Marketing Specialist</h5>
+                    <p>Hirely made my job search effortless! Within days, I found the perfect opportunity that matched my skills. The process was smooth, and the job listings were genuine. Highly recommended!</p>
+                </div>
+            </div>
+
+            
+            <div class="col-md-3">
+                <div class="testimonial-card">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.3dCaxs7dL2vi1FTLTOuevQHaHa&w=474&h=474&c=7" alt="Priya Sharma" class="testimonial-img">
+                    <h5> Priya Sharma – Software Developer</h5>
+                    <p>I struggled to find the right job before, but Hirely changed that. The website is easy to use, and I landed my dream job in no time! Thank you for making job hunting stress-free!</p>
+                </div>
+            </div>
+
+            
+            <div class="col-md-3">
+                <div class="testimonial-card">
+                    <img src="https://media.istockphoto.com/id/2156164346/photo/portrait-of-young-businesswoman-with-curly-hairstyle-wear-trendy-smart-casual-outfit-isolated.webp?a=1&b=1&s=612x612&w=0&k=20&c=f1ofOsovlmx8h-kacoCGaQJGjG8KnMfVbow9yVw6boA=" alt="Amit Verma" class="testimonial-img">
+                    <h5> Amit Verma – HR Manager</h5>
+                    <p>As an employer, finding the right talent was always a challenge. Hirely provided us with skilled candidates quickly, and the hiring process was seamless. A fantastic platform for recruitment!</p>
+                </div>
+            </div>
+
+            
+            <div class="col-md-3">
+                <div class="testimonial-card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.mzgnWb1Th9fRhsSEiZb3FwHaHa&w=474&h=474&c=7" alt="Neha Kapoor" class="testimonial-img">
+                    <h5> Neha Kapoor – Graphic Designer</h5>
+                    <p>Hirely helped me connect with companies that truly value creativity. I found a role that perfectly fits my passion, and I couldn’t be happier. A must-try for job seekers!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer bg-dark text-white mt-5">
+    <div class="footer-container">
+        <div class="row">
+            
+            <div class="col-md-4">
+                <h5>Location</h5>
+                <ul class="list-unstyled">
+                    <li>Bengaluru, Karnataka, India</li>
+                    <li>Hyderabad, Telangana, India</li>
+                    <li>Chennai, Tamil Nadu, India</li>
+                    <li>Delhi, India</li>
+                    <li>Tiruvananthapuram, Kerala, India</li>
+                </ul>
+            </div>
+
+            
+            <div class="col-md-4">
+                <h5>Contact Us</h5>
+                <ul class="list-unstyled">
+                    <li>📞 Mobile: 9391050710</li>
+                    <li>📧 Email: hirely34@gmail.com</li>
+                </ul>
+            </div>
+
+          
+            <div class="col-md-4">
+                <h5>Related Information</h5>
+                <p>Hirely is a trusted job portal connecting job seekers with top employers. We provide seamless job searching, application tracking, and career growth opportunities.</p>
+            </div>
+        </div>
+        <hr class="bg-light">
+        <p class="text-center">&copy; 2024 Hirely. All Rights Reserved.</p>
+    </div>
+</footer>
+
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+{% endblock %}

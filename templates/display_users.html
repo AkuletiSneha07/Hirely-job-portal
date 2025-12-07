@@ -1,0 +1,30 @@
+{% extends 'admin.html' %}
+
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='display_users.css') }}">
+
+    <h2 class="heading">Registered Users</h2>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <a href="{{ url_for('auth.edit_user', user_id=user.id) }}" class="edit-btn">Edit</a>
+                    <form action="{{ url_for('auth.delete_user', user_id=user.id) }}" method="POST" style="display:inline;">
+                        <button type="submit" class="delete-btn" onclick="return confirm('Are you sure you want to delete this user?')">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Search Results</h1>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% else %}
+        <ul>
+            {% for job in jobs %}
+                <li><a href="{{ url_for('jobs.job_detail', job_id=job.id) }}">{{ job.title }}</a> - {{job.company_name}} - {{job.location}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

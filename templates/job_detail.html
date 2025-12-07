@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='job_detail.css') }}"> 
+
+    <h1>{{ job.title }}</h1>
+    <p>Company: {{ job.company_name }}</p>
+
+    <p>Description:</p>
+    <ul>
+        <li>{{ job.description }}</li>
+    </ul>
+
+    <p>Responsibilities:</p>
+    <ul>
+        {% for responsibility in job.responsibilities.split('\n') %}
+            <li>{{ responsibility }}</li>
+        {% endfor %}
+    </ul>
+
+    <p>Required Skills:</p>
+    <ul>
+        {% for skill in job.required_skills.split('\n') %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <p>Key Skills:</p>
+    <ul>
+        {% for key_skill in job.key_skills.split('\n') %}
+            <li>{{ key_skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <p>Location: {{ job.location }}</p>
+    <p>Salary: {{ job.salary }}</p>
+    <a class="apply-btn" href="{{ url_for('jobs.apply_form', job_id=job.id) }}">Apply</a>
+{% endblock %}

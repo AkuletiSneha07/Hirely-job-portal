@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Admin: Jobs</h1>
+    <ul>
+        {% for job in jobs %}
+            <li>{{ job.title }} - {{ job.company_name }} - <a href="{{ url_for('admin.delete_job', job_id=job.id) }}">Delete</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

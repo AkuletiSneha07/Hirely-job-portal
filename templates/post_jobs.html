@@ -1,0 +1,105 @@
+{% extends 'employe.html' %}
+{% block content %}
+<head>
+    <style>
+        .post-job-container {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .btn-primary {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<div class="post-job-container">
+    <h2>Post a New Job</h2>
+    <form method="POST">
+        <div class="form-group">
+            <label>Job Title</label>
+            <input type="text" class="form-control" name="title" required>
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea class="form-control" name="description" required></textarea>
+        </div>
+        <div class="form-group">
+            <label>Responsibilities</label>
+            <textarea class="form-control" name="responsibilities" required></textarea>
+        </div>
+        <div class="form-group">
+            <label>Required Skills</label>
+            <textarea class="form-control" name="required_skills" required></textarea>
+        </div>
+        <div class="form-group">
+            <label>Key Skills</label>
+            <input type="text" class="form-control" name="key_skills" required>
+        </div>
+        <div class="form-group">
+            <label>Company Name</label>
+            <input type="text" class="form-control" name="company_name" required>
+        </div>
+        <div class="form-group">
+            <label>Location</label>
+            <input type="text" class="form-control" name="location" required>
+        </div>
+        <div class="form-group">
+            <label>Experience</label>
+            <input type="text" class="form-control" name="experience" required>
+        </div>
+        <div class="form-group">
+            <label>Salary</label>
+            <input type="text" class="form-control" name="salary" required>
+        </div>
+        <div class="form-group">
+            <label>Image URL (Optional)</label>
+            <input type="text" class="form-control" name="image_url">
+        </div>
+        <button type="submit" class="btn btn-primary">Post Job</button>
+    </form>
+</div>
+{% endblock %}
